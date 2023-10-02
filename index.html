@@ -3,11 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentina Alvarez</title>
     <style>
-        body { 
+        body {font-family: Arial;}
+        {
             background-color: #EDBB99;
         }
+        .tab {
+            overflow: hidden;
+            border: 1px solid #A04000;
+            background-color: #EDBB99;
+        }
+        .tab button {
+            background-color: inherit;
+            float: right;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab button:hover {
+            background-color: #E59866;
+        }
+        .tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+        .topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+        .topright:hover {color: red;}
+</style>
+</head>
+<body>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Interests')" id="defaultOpen">Interests</button>
+  <button class="tablinks" onclick="openCity(event, 'Research')">Research</button>
+  <button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
+</div>
+
+<div id="Interests" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>Interests</h3>
+  <p>Here is where I write my research interests.</p>
+</div>
+
+<div id="Research" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>Research/h3>
+  <p>Here is where I have my papers and ongoing work.</p> 
+</div>
+    <div id="Contact" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>Contact</h3>
+  <p>CV and contact information.</p>
+</div>
         p {
             color: white;
             text-align: center;
@@ -24,6 +79,6 @@
     <p>Doctoral Candidate, University of Hawaiʻi at Mānoa</p>
     <p>NSF Graduate Research Fellow, AAUW American Dissertation Fellow</p>
     <p>Genomics, Conservation, Bioinformatics, Invasive Species</p>
-    <p>Publications: <a href="https://scholar.google.com/citations?user=IeeMIqIAAAAJ&hl=en">Google Scholar</a>!</p>
+    <p>Publications: <a href="https://scholar.google.com/citations?user=IeeMIqIAAAAJ&hl=en">Google Scholar</a></p>
 </body>
 </html>
