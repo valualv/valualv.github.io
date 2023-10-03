@@ -1,83 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Bar Example</title>
     <style>
-        body {font-family: Arial;}
-        {
-            background-color: #EDBB99;
+        /* Style for the tab bar */
+        .tab-bar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
         }
+
+        /* Style for individual tabs */
         .tab {
-            overflow: hidden;
-            border: 1px solid #A04000;
-            background-color: #EDBB99;
-        }
-        .tab button {
-            background-color: inherit;
-            float: right;
-            border: none;
-            outline: none;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
             cursor: pointer;
-            padding: 14px 16px;
-            transition: 0.3s;
-            font-size: 17px;
         }
-        .tab button:hover {
-            background-color: #E59866;
+
+        /* Style for the active tab */
+        .active-tab {
+            background-color: #555;
         }
-        .tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-        .topright {
-  float: right;
-  cursor: pointer;
-  font-size: 28px;
-}
-        .topright:hover {color: red;}
-        p {
-            color: white;
+
+        /* Style for the content area */
+        .tab-content {
             text-align: center;
-            font-size: 24 px;
+            padding: 20px;
         }
-        h1 {
-            color: white;
-            text-align: center;
-        }
-</style>
+    </style>
 </head>
 <body>
-    <body>
-    <h1>Valentina Alvarez</h1>
-    <p>Doctoral Candidate, University of Hawaiʻi at Mānoa</p>
-    <p>NSF Graduate Research Fellow, AAUW American Dissertation Fellow</p>
-    <p>Genomics, Conservation, Bioinformatics, Invasive Species</p>
-    <p>Publications: <a href="https://scholar.google.com/citations?user=IeeMIqIAAAAJ&hl=en">Google Scholar</a></p>
-        
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Interests')" id="defaultOpen">Interests</button>
-  <button class="tablinks" onclick="openCity(event, 'Research')">Research</button>
-  <button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
-</div>
+    <div class="tab-bar">
+        <div class="tab active-tab" onclick="showTab('tab1')">Tab 1</div>
+        <div class="tab" onclick="showTab('tab2')">Tab 2</div>
+        <div class="tab" onclick="showTab('tab3')">Tab 3</div>
+    </div>
 
-<div id="Interests" class="tabcontent">
-  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-  <h3>Interests</h3>
-  <p>Here is where I write my research interests.</p>
-</div>
+    <div class="tab-content" id="tab1">
+        <h1>Tab 1 Content</h1>
+        <p>This is the content of Tab 1.</p>
+    </div>
 
-<div id="Research" class="tabcontent">
-  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-  <h3>Research/h3>
-  <p>Here is where I have my papers and ongoing work.</p> 
-</div>
-    <div id="Contact" class="tabcontent">
-  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-  <h3>Contact</h3>
-  <p>CV and contact information.</p>
-</div>
+    <div class="tab-content" id="tab2" style="display: none;">
+        <h1>Tab 2 Content</h1>
+        <p>This is the content of Tab 2.</p>
+    </div>
+
+    <div class="tab-content" id="tab3" style="display: none;">
+        <h1>Tab 3 Content</h1>
+        <p>This is the content of Tab 3.</p>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabs = document.querySelectorAll('.tab');
+
+            // Hide all tab contents
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Deactivate all tabs
+            tabs.forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+
+            // Show the selected tab content and mark it as active
+            document.getElementById(tabId).style.display = 'block';
+            document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active-tab');
+        }
+    </script>
 </body>
 </html>
