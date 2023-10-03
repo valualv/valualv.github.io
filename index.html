@@ -7,7 +7,7 @@
         .tab-bar {
             display: flex;
             justify-content: center;
-            background-color: #333;
+            background-color: #A9DFBF;
             padding: 10px 0;
         }
 
@@ -21,7 +21,7 @@
 
         /* Style for the active tab */
         .active-tab {
-            background-color: #555;
+            background-color: #D5F5E3;
         }
 
         /* Style for the content area */
@@ -33,22 +33,23 @@
 </head>
 <body>
     <div class="tab-bar">
-        <div class="tab active-tab" onclick="showTab('tab1')">Tab 1</div>
-        <div class="tab" onclick="showTab('tab2')">Tab 2</div>
-        <div class="tab" onclick="showTab('tab3')">Tab 3</div>
+        <div class="tab active-tab" onclick="showTab('About Me')">About Me</div>
+        <div class="tab" onclick="showTab('Publications')">Publications</div>
+        <div class="tab" onclick="showTab('Contact')">Contact</div>
     </div>
 
-    <div class="tab-content" id="tab1">
-        <h1>Tab 1 Content</h1>
-        <p>This is the content of Tab 1.</p>
+    <div class="tab-content" id="About Me">
+        <h1>Valentina Alvarez</h1>
+        <p>PhD Candidate, University of Hawaiʻi at Mānoa</p>
+        <p>NSF Graduate Research Fellow, AAUW American Dissertation Fellow</p>
     </div>
 
-    <div class="tab-content" id="tab2" style="display: none;">
-        <h1>Tab 2 Content</h1>
-        <p>This is the content of Tab 2.</p>
+    <div class="tab-content" id="Publications" style="display: none;">
+        <h1>Publications</h1>
+        <p><a href="https://scholar.google.com/citations?user=IeeMIqIAAAAJ&hl=en">Google Scholar</a></p>
     </div>
 
-    <div class="tab-content" id="tab3" style="display: none;">
+    <div class="tab-content" id="Contact" style="display: none;">
         <h1>Tab 3 Content</h1>
         <p>This is the content of Tab 3.</p>
     </div>
