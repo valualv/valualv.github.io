@@ -106,7 +106,10 @@
 
             // Show the selected tab content and mark it as active
             document.getElementById(tabId).style.display = 'block';
-            document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active-tab');
+
+            // Add the "active-tab" class to the selected tab
+            const selectedTab = document.querySelector(`.tab[data-tab="${tabId}"]`);
+            selectedTab.classList.add('active-tab');
         }
     </script>
 </body>
