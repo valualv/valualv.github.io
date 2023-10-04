@@ -18,6 +18,10 @@
             margin: 0 10px;
             cursor: pointer;
         }
+            /* Style for the active tab */
+        .active-tab {
+            background-color: #FAE5D3;
+        }
         
         /* Style for the content area */
         .tab-content {
@@ -54,8 +58,8 @@
 <body>
     <div class="tab-bar">
         <div class="tab active-tab" onclick="showTab('About Me')">About Me</div>
-        <div class="tab" onclick="showTab('Publications')">Publications</div>
-        <div class="tab" onclick="showTab('Contact')">Contact</div>
+        <div class="tab active-tab" onclick="showTab('Publications')">Publications</div>
+        <div class="tab active-tab" onclick="showTab('Contact')">Contact</div>
     </div>
 
     <div class="tab-content" id="About Me">
