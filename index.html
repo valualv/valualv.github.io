@@ -60,12 +60,12 @@
 </head>
 <body>
     <div class="tab-bar">
-        <div class="tab active-tab" onclick="showTab('About Me')">About Me</div>
-        <div class="tab" onclick="showTab('Publications')">Publications</div>
-        <div class="tab" onclick="showTab('Contact')">Contact</div>
+        <div class="tab active-tab" onclick="showTab('aboutMe')">About Me</div>
+        <div class="tab" onclick="showTab('publications')">Publications</div>
+        <div class="tab" onclick="showTab('contact')">Contact</div>
     </div>
 
-    <div class="tab-content" id="About Me">
+    <div class="tab-content" id="aboutMe">
         <h1 style="line-height: 1;">Valentina Alvarez</h1>
         <p style="line-height: .5;">PhD Candidate, University of Hawaiʻi at Mānoa</p>
         <p style="line-height: .5;">NSF Graduate Research Fellow, AAUW American Dissertation Fellow</p>
@@ -74,13 +74,13 @@
         <p><img src="https://github.com/valualv/valualv.github.io/blob/main/VA_volcanoes.jpg?raw=true" width="500" height="350" class="img_skink"></p>
     </div>
 
-    <div class="tab-content" id="Publications" style="display: none;">
+    <div class="tab-content" id="publications" style="display: none;">
         <h1>Publications</h1>
         <p><a href="https://scholar.google.com/citations?user=IeeMIqIAAAAJ&hl=en">Google Scholar</a></p>
         <p><img src="https://github.com/valualv/valualv.github.io/blob/main/fig1_revised.jpg?raw=true" width="500" height="350" class="img_skink2"></p>
     </div>
 
-    <div class="tab-content" id="Contact" style="display: none;">
+    <div class="tab-content" id="contact" style="display: none;">
         <h1>Don't Hesitate to Reach Out</h1>
         <p style="line-height: .5;">Currently on the hunt for postdoctoral positions</p>
         <p style="line-height: .5;">or entry-level bioinformatics positions in private industry</p>
@@ -104,11 +104,11 @@
                 tab.classList.remove('active-tab');
             });
 
-            // Show the selected tab content and mark it as active
+            // Show the selected tab content
             document.getElementById(tabId).style.display = 'block';
 
-            // Add the "active-tab" class to the selected tab
-            const selectedTab = document.querySelector(`.tab[data-tab="${tabId}"]`);
+            // Add the "active-tab" class to the clicked tab
+            const selectedTab = document.querySelector(`.tab[onclick="showTab('${tabId}')]`);
             selectedTab.classList.add('active-tab');
         }
     </script>
