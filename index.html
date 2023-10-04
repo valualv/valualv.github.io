@@ -20,7 +20,8 @@
         }
 
         /* Style for the active tab */
-        .active-tab {
+        .tabs a:hover, 
+        .tabs a.active{
             background-color: #FAE5D3; /* Background color for active tab */
         }
         
@@ -59,12 +60,13 @@
     </style>
 </head>
 <body>
+   <div class="tabs">
     <div class="tab-bar">
-        <div class="tab active-tab" onclick="showTab('aboutMe')">About Me</div>
+        <div class="tab" onclick="showTab('aboutMe')">About Me</div>
         <div class="tab" onclick="showTab('publications')">Publications</div>
         <div class="tab" onclick="showTab('contact')">Contact</div>
     </div>
-
+   </div>
     <div class="tab-content" id="aboutMe">
         <h1 style="line-height: 1;">Valentina Alvarez</h1>
         <p style="line-height: .5;">PhD Candidate, University of Hawaiʻi at Mānoa</p>
