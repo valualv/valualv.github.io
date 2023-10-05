@@ -22,6 +22,11 @@
             background-color: #EDBB99; /* Set the default background color for tabs */
         }
 
+        /* Style for the active tab */
+        .tab.active {
+            background-color: #FAE5D3; /* Background color for active tab */
+        }
+
         /* Style for the content area */
         .tab-content {
             text-align: center;
@@ -59,21 +64,33 @@
 <body>
     <div class="tabs">
         <div class="tab-bar">
-            <div class="tab" onclick="showTab('aboutMe')">About Me</div>
+            <div class="tab active" onclick="showTab('aboutMe')">About Me</div>
             <div class="tab" onclick="showTab('publications')">Publications</div>
             <div class="tab" onclick="showTab('contact')">Contact</div>
         </div>
     </div>
     <div class="tab-content" id="aboutMe">
-        <!-- Content for "About Me" tab -->
+        <h1 style="line-height: 1;">Valentina Alvarez</h1>
+        <p style="line-height: .5;">PhD Candidate, University of Hawaiʻi at Mānoa</p>
+        <p style="line-height: .5;">NSF Graduate Research Fellow, AAUW American Dissertation Fellow</p>
+        <p style="line-height: .5;">Driven by conservation and fueled by genomics. I love all taxa.</p>
+        <p style="line-height: .5;">Conservation, Genomics, Invasive Species, Bioinformatics</p>
+        <p><img src="https://github.com/valualv/valualv.github.io/blob/main/VA_volcanoes.jpg?raw=true" width="500" height="350" class="img_skink"></p>
     </div>
 
     <div class="tab-content" id="publications" style="display: none;">
-        <!-- Content for "Publications" tab -->
+        <h1>Publications</h1>
+        <p><a href="https://scholar.google.com/citations?user=IeeMIqIAAAAJ&hl=en">Google Scholar</a></p>
+        <p><img src="https://github.com/valualv/valualv.github.io/blob/main/fig1_revised.jpg?raw=true" width="500" height="350" class="img_skink2"></p>
     </div>
 
     <div class="tab-content" id="contact" style="display: none;">
-        <!-- Content for "Contact" tab -->
+        <h1>Don't Hesitate to Reach Out</h1>
+        <p style="line-height: .5;">Currently on the hunt for postdoctoral positions</p>
+        <p style="line-height: .5;">or entry-level bioinformatics positions in private industry</p>
+        <p style="line-height: .5;">val64@hawaii.edu</p>
+        <p><a href="https://github.com/valualv/cv_va/raw/main/cv_draft.pdf" target="_blank">Download CV</a></p>
+        <p><img src="https://github.com/valualv/valualv.github.io/blob/main/C4ADA358-BD0B-48B0-9795-B0D6C8933CAD_1_105_c.jpeg?raw=true" width="500" height="350" class="img_skink3"></p>
     </div>
 
     <script>
@@ -86,7 +103,7 @@
                 content.style.display = 'none';
             });
 
-            // Remove the "active" class from all tabs
+            // Deactivate all tabs
             tabs.forEach(tab => {
                 tab.classList.remove('active');
             });
