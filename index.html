@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Valentina Alvarez</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
     <style>
         /* Style for the tab bar */
         .tab-bar {
@@ -17,14 +19,14 @@
             padding: 10px 20px;
             margin: 0 10px;
             cursor: pointer;
+            background-color: #EDBB99; /* Set the default background color for tabs */
         }
 
         /* Style for the active tab */
-        .tabs a:hover, 
-        .tabs a.active{
+        .tab.active {
             background-color: #FAE5D3; /* Background color for active tab */
         }
-        
+
         /* Style for the content area */
         .tab-content {
             text-align: center;
@@ -39,7 +41,7 @@
             float: center;
             margin-top: 30px; /* Add margin-bottom for spacing below the image */
         }
-        
+
         img.skink2 {
             width: 40%;
             height: 400px;
@@ -48,7 +50,7 @@
             float: center;
             margin-top: 30px;
         }
-        
+
         img.skink3 {
             width: 40%;
             height: 400px;
@@ -60,13 +62,13 @@
     </style>
 </head>
 <body>
-   <div class="tabs">
-    <div class="tab-bar">
-        <div class="tab" onclick="showTab('aboutMe')">About Me</div>
-        <div class="tab" onclick="showTab('publications')">Publications</div>
-        <div class="tab" onclick="showTab('contact')">Contact</div>
+    <div class="tabs">
+        <div class="tab-bar">
+            <div class="tab active" onclick="showTab('aboutMe')">About Me</div>
+            <div class="tab" onclick="showTab('publications')">Publications</div>
+            <div class="tab" onclick="showTab('contact')">Contact</div>
+        </div>
     </div>
-   </div>
     <div class="tab-content" id="aboutMe">
         <h1 style="line-height: 1;">Valentina Alvarez</h1>
         <p style="line-height: .5;">PhD Candidate, University of Hawaiʻi at Mānoa</p>
@@ -103,15 +105,15 @@
 
             // Deactivate all tabs
             tabs.forEach(tab => {
-                tab.classList.remove('active-tab');
+                tab.classList.remove('active');
             });
 
             // Show the selected tab content
             document.getElementById(tabId).style.display = 'block';
 
-            // Add the "active-tab" class to the clicked tab
+            // Add the "active" class to the clicked tab
             const selectedTab = document.querySelector(`.tab[onclick="showTab('${tabId}')]`);
-            selectedTab.classList.add('active-tab');
+            selectedTab.classList.add('active');
         }
     </script>
 </body>
